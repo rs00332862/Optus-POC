@@ -15,6 +15,9 @@
 		F91146782476883100E26A23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91146762476883100E26A23 /* LaunchScreen.storyboard */; };
 		F91146832476883200E26A23 /* Optus_POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146822476883200E26A23 /* Optus_POCTests.swift */; };
 		F911468E2476883200E26A23 /* Optus_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F911468D2476883200E26A23 /* Optus_POCUITests.swift */; };
+		F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A0247690FD00E26A23 /* WeatherTableViewCell.swift */; };
+		F91146A42476925200E26A23 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A32476925200E26A23 /* Constant.swift */; };
+		F91146A624769BAB00E26A23 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A524769BAB00E26A23 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F91146892476883200E26A23 /* Optus POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Optus POCUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F911468D2476883200E26A23 /* Optus_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optus_POCUITests.swift; sourceTree = "<group>"; };
 		F911468F2476883200E26A23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91146A0247690FD00E26A23 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		F91146A32476925200E26A23 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F91146A524769BAB00E26A23 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,8 @@
 		F911466A2476882400E26A23 /* Optus POC */ = {
 			isa = PBXGroup;
 			children = (
-				F911466B2476882400E26A23 /* AppDelegate.swift */,
-				F911466D2476882500E26A23 /* SceneDelegate.swift */,
-				F911466F2476882500E26A23 /* WeatherListViewController.swift */,
+				F911469B2476908800E26A23 /* Weather List */,
+				F911469C2476909F00E26A23 /* App Delegate */,
 				F91146712476882500E26A23 /* Main.storyboard */,
 				F91146742476883100E26A23 /* Assets.xcassets */,
 				F91146762476883100E26A23 /* LaunchScreen.storyboard */,
@@ -126,6 +131,58 @@
 				F911468F2476883200E26A23 /* Info.plist */,
 			);
 			path = "Optus POCUITests";
+			sourceTree = "<group>";
+		};
+		F911469B2476908800E26A23 /* Weather List */ = {
+			isa = PBXGroup;
+			children = (
+				F91146A22476924100E26A23 /* Utilities */,
+				F911469F247690C700E26A23 /* View Model */,
+				F911469E247690BF00E26A23 /* Model */,
+				F911469D247690B400E26A23 /* View */,
+			);
+			path = "Weather List";
+			sourceTree = "<group>";
+		};
+		F911469C2476909F00E26A23 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F911466B2476882400E26A23 /* AppDelegate.swift */,
+				F911466D2476882500E26A23 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		F911469D247690B400E26A23 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F911466F2476882500E26A23 /* WeatherListViewController.swift */,
+				F91146A0247690FD00E26A23 /* WeatherTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F911469E247690BF00E26A23 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F91146A524769BAB00E26A23 /* WeatherModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F911469F247690C700E26A23 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F91146A22476924100E26A23 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F91146A32476925200E26A23 /* Constant.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */,
 				F91146702476882500E26A23 /* WeatherListViewController.swift in Sources */,
+				F91146A42476925200E26A23 /* Constant.swift in Sources */,
 				F911466C2476882500E26A23 /* AppDelegate.swift in Sources */,
+				F91146A624769BAB00E26A23 /* WeatherModel.swift in Sources */,
 				F911466E2476882500E26A23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,6 +18,10 @@
 		F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A0247690FD00E26A23 /* WeatherTableViewCell.swift */; };
 		F91146A42476925200E26A23 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A32476925200E26A23 /* Constant.swift */; };
 		F91146A624769BAB00E26A23 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A524769BAB00E26A23 /* WeatherModel.swift */; };
+		F91146A82476BD0300E26A23 /* TempInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A72476BD0300E26A23 /* TempInformation.swift */; };
+		F91146AA2476CA3A00E26A23 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146A92476CA3A00E26A23 /* NetworkManager.swift */; };
+		F91146AD2476CB6F00E26A23 /* WeatherDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146AC2476CB6F00E26A23 /* WeatherDataViewModel.swift */; };
+		F91146AF24779CFD00E26A23 /* UIImageView+URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91146AE24779CFD00E26A23 /* UIImageView+URLImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		F91146A0247690FD00E26A23 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		F91146A32476925200E26A23 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F91146A524769BAB00E26A23 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F91146A72476BD0300E26A23 /* TempInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempInformation.swift; sourceTree = "<group>"; };
+		F91146A92476CA3A00E26A23 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F91146AC2476CB6F00E26A23 /* WeatherDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataViewModel.swift; sourceTree = "<group>"; };
+		F91146AE24779CFD00E26A23 /* UIImageView+URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URLImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				F911469B2476908800E26A23 /* Weather List */,
+				F91146AB2476CA4100E26A23 /* Network Manager */,
+				F91146A22476924100E26A23 /* Utilities */,
 				F911469C2476909F00E26A23 /* App Delegate */,
 				F91146712476882500E26A23 /* Main.storyboard */,
 				F91146742476883100E26A23 /* Assets.xcassets */,
@@ -136,7 +146,6 @@
 		F911469B2476908800E26A23 /* Weather List */ = {
 			isa = PBXGroup;
 			children = (
-				F91146A22476924100E26A23 /* Utilities */,
 				F911469F247690C700E26A23 /* View Model */,
 				F911469E247690BF00E26A23 /* Model */,
 				F911469D247690B400E26A23 /* View */,
@@ -166,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F91146A524769BAB00E26A23 /* WeatherModel.swift */,
+				F91146A72476BD0300E26A23 /* TempInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +183,7 @@
 		F911469F247690C700E26A23 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				F91146AC2476CB6F00E26A23 /* WeatherDataViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -180,9 +191,18 @@
 		F91146A22476924100E26A23 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F91146AE24779CFD00E26A23 /* UIImageView+URLImage.swift */,
 				F91146A32476925200E26A23 /* Constant.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F91146AB2476CA4100E26A23 /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F91146A92476CA3A00E26A23 /* NetworkManager.swift */,
+			);
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,8 +338,12 @@
 			files = (
 				F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */,
 				F91146702476882500E26A23 /* WeatherListViewController.swift in Sources */,
+				F91146A82476BD0300E26A23 /* TempInformation.swift in Sources */,
 				F91146A42476925200E26A23 /* Constant.swift in Sources */,
+				F91146AF24779CFD00E26A23 /* UIImageView+URLImage.swift in Sources */,
+				F91146AA2476CA3A00E26A23 /* NetworkManager.swift in Sources */,
 				F911466C2476882500E26A23 /* AppDelegate.swift in Sources */,
+				F91146AD2476CB6F00E26A23 /* WeatherDataViewModel.swift in Sources */,
 				F91146A624769BAB00E26A23 /* WeatherModel.swift in Sources */,
 				F911466E2476882500E26A23 /* SceneDelegate.swift in Sources */,
 			);

@@ -58,6 +58,13 @@ class WeatherListViewController: UIViewController {
         alert.addAction(UIAlertAction(title: NSLocalizedString("OkButton", comment: ""), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destination.
+    // Pass the selected object to the new view controller.
+        let destinationVC = segue.destination as! WeatherDetailTableViewController
+        destinationVC.selectedCellIndex = weatherTableView.indexPathForSelectedRow?.row
+    }
 }
 
 //MARK: - UITableView Delegate
@@ -69,8 +76,18 @@ extension WeatherListViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.weatherCustomCellIdentifier) as! WeatherTableViewCell
-        cell.setWeatherCellWith(weatherData: weatherDataModel.weatherListArray[indexPath.row])
+        cell.tag = indexPath.row
+        cell.setWeatherCellWithData()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfSectionsInTableView section: Int) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

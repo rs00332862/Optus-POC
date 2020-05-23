@@ -14,9 +14,11 @@ struct TempInformation: Decodable  {
     var minTemp: Double
     var maxTemp: Double
     var humidity: Double
+    var feelsLikeTemp: Double
     
     enum CodingKeys: String, CodingKey {
         case temp = "temp"
+        case feelsLikeTemp = "feels_like"
         case minTemp = "temp_min"
         case maxTemp = "temp_max"
         case humidity = "humidity"

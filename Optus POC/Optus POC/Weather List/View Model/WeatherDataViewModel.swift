@@ -13,7 +13,13 @@ class WeatherDataViewModel {
     var weatherListCount: Int = 0
     
     func getWeatherForCitiesList(completion: @escaping (Result<Bool, Error>) -> Void) {
-        NetworkManager.sharedInstance.getDataFromWebService(urlString: Constant.getWeatherListForGroupURL){ (responseData: Result<CityWeatherDataModel,Error>) in
+        
+        var urlString = Constant.getWeatherListForGroupURL
+        let selectedCityIDs = UserDefaultHelper.getAllSecletdCitieIDs()
+        if (selectedCityIDs != "") {
+            urlString = urlString + selectedCityIDs
+        }
+        NetworkManager.sharedInstance.getDataFromWebService(urlString: urlString){ (responseData: Result<CityWeatherDataModel,Error>) in
             DispatchQueue.main.async {
                 switch(responseData) {
                 case .success(let responseWeatherList):
@@ -29,6 +35,14 @@ class WeatherDataViewModel {
     }
     
     func getWeatherDataFor(indexPathRow: Int) -> WeatherModel {
-        WeatherDataViewModel.self.weatherListArray[indexPathRow]
+        return WeatherDataViewModel.self.weatherListArray[indexPathRow]
+    }
+    
+    static func getCityNameFor(indexPathRow: Int) -> String {
+        return WeatherDataViewModel.self.weatherListArray[indexPathRow].cityName!
+    }
+    
+    static func getCityIDFor(indexPathRow: Int) -> Int {
+        return WeatherDataViewModel.self.weatherListArray[indexPathRow].id
     }
 }

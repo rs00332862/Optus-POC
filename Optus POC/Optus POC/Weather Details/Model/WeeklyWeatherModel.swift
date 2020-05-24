@@ -12,18 +12,18 @@ struct WeeklyWeatherModel: Decodable {
     var weeklyWeatherData: [DailyWeather]
     
     enum CodingKeys: String, CodingKey {
-        case weeklyWeatherData = "daily"
+        case weeklyWeatherData = "list"
     }
 }
 
 struct DailyWeather: Decodable {
     var weatherDate: Double
-    var tempInformation: Temperature
+    var tempInformation: TempInformation
     var weatherCondition: [WeatherCondition]
     
     enum CodingKeys: String, CodingKey {
         case weatherDate = "dt"
-        case tempInformation = "temp"
+        case tempInformation = "main"
         case weatherCondition = "weather"
     }
 }

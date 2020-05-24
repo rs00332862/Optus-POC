@@ -28,6 +28,15 @@
 		F9684EF824792EAD003C0682 /* WeeklyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EF724792EAD003C0682 /* WeeklyWeatherModel.swift */; };
 		F9684EFB247934EB003C0682 /* WeeklyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EFA247934EB003C0682 /* WeeklyWeatherViewModel.swift */; };
 		F9684EFD24795802003C0682 /* DailyWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */; };
+		F9684EFF247A4C3D003C0682 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = F9684EFE247A4C3D003C0682 /* CityList.json */; };
+		F9684F03247A4CDB003C0682 /* CityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684F02247A4CDB003C0682 /* CityDataModel.swift */; };
+		F9684F05247A5695003C0682 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684F04247A5695003C0682 /* CityViewModel.swift */; };
+		F9AD0988247A74E5003CB487 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0987247A74E5003CB487 /* CityTableViewCell.swift */; };
+		F9AD098A247A8EE3003CB487 /* UITableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */; };
+		F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */; };
+		F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9AD098D247AF66B003CB487 /* ApiKeys.plist */; };
+		F9AD0990247B012E003CB487 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098F247B012E003CB487 /* Overlay.swift */; };
+		F9F6174B247A634500810F99 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6174A247A634500810F99 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +84,15 @@
 		F9684EF724792EAD003C0682 /* WeeklyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherModel.swift; sourceTree = "<group>"; };
 		F9684EFA247934EB003C0682 /* WeeklyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherViewModel.swift; sourceTree = "<group>"; };
 		F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		F9684EFE247A4C3D003C0682 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
+		F9684F02247A4CDB003C0682 /* CityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataModel.swift; sourceTree = "<group>"; };
+		F9684F04247A5695003C0682 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		F9AD0987247A74E5003CB487 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExtension.swift; sourceTree = "<group>"; };
+		F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Helper.swift"; sourceTree = "<group>"; };
+		F9AD098D247AF66B003CB487 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
+		F9AD098F247B012E003CB487 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		F9F6174A247A634500810F99 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +143,7 @@
 		F911466A2476882400E26A23 /* Optus POC */ = {
 			isa = PBXGroup;
 			children = (
+				F9684F00247A4CB5003C0682 /* Add City */,
 				F91146B02477D76600E26A23 /* Weather Details */,
 				F911469B2476908800E26A23 /* Weather List */,
 				F91146AB2476CA4100E26A23 /* Network Manager */,
@@ -204,8 +223,13 @@
 		F91146A22476924100E26A23 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F9684EFE247A4C3D003C0682 /* CityList.json */,
 				F91146AE24779CFD00E26A23 /* UIImageView+URLImage.swift */,
 				F91146A32476925200E26A23 /* Constant.swift */,
+				F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */,
+				F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */,
+				F9AD098D247AF66B003CB487 /* ApiKeys.plist */,
+				F9AD098F247B012E003CB487 /* Overlay.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,6 +277,41 @@
 				F9684EFA247934EB003C0682 /* WeeklyWeatherViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F9684F00247A4CB5003C0682 /* Add City */ = {
+			isa = PBXGroup;
+			children = (
+				F9F61749247A631000810F99 /* View */,
+				F9684F06247A569C003C0682 /* View Model */,
+				F9684F01247A4CC3003C0682 /* Model */,
+			);
+			path = "Add City";
+			sourceTree = "<group>";
+		};
+		F9684F01247A4CC3003C0682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9684F02247A4CDB003C0682 /* CityDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9684F06247A569C003C0682 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9684F04247A5695003C0682 /* CityViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F9F61749247A631000810F99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9F6174A247A634500810F99 /* AddCityViewController.swift */,
+				F9AD0987247A74E5003CB487 /* CityTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,8 +419,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F91146782476883100E26A23 /* LaunchScreen.storyboard in Resources */,
+				F9684EFF247A4C3D003C0682 /* CityList.json in Resources */,
 				F91146752476883100E26A23 /* Assets.xcassets in Resources */,
 				F91146732476882500E26A23 /* Main.storyboard in Resources */,
+				F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,14 +448,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9684EF524791B94003C0682 /* WeeklyWeatherTableViewCell.swift in Sources */,
+				F9684F03247A4CDB003C0682 /* CityDataModel.swift in Sources */,
+				F9AD0988247A74E5003CB487 /* CityTableViewCell.swift in Sources */,
+				F9AD098A247A8EE3003CB487 /* UITableViewControllerExtension.swift in Sources */,
+				F9F6174B247A634500810F99 /* AddCityViewController.swift in Sources */,
 				F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */,
+				F9684F05247A5695003C0682 /* CityViewModel.swift in Sources */,
 				F91146702476882500E26A23 /* WeatherListViewController.swift in Sources */,
+				F9AD0990247B012E003CB487 /* Overlay.swift in Sources */,
 				F91146A82476BD0300E26A23 /* TempInformation.swift in Sources */,
 				F91146B72477E53A00E26A23 /* WeatherDetailTableViewCell.swift in Sources */,
 				F91146A42476925200E26A23 /* Constant.swift in Sources */,
 				F91146AF24779CFD00E26A23 /* UIImageView+URLImage.swift in Sources */,
 				F9684EF824792EAD003C0682 /* WeeklyWeatherModel.swift in Sources */,
 				F91146BB247851BE00E26A23 /* WeatherDetailTableViewController.swift in Sources */,
+				F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */,
 				F9684EFD24795802003C0682 /* DailyWeatherCollectionViewCell.swift in Sources */,
 				F91146AA2476CA3A00E26A23 /* NetworkManager.swift in Sources */,
 				F911466C2476882500E26A23 /* AppDelegate.swift in Sources */,

@@ -19,22 +19,20 @@ class WeatherDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var minimumWeatherLabel: UILabel!
     @IBOutlet weak var windSpeedWeatherLabel: UILabel!
     @IBOutlet weak var windSpeedImageView: UIImageView!
-    @IBOutlet weak var weatherDetailImageConstraint: NSLayoutConstraint!
-    
     
     func setWeatherDetailCellFor(indexPathRow: Int) {
         
         let weatherData = weatherDataViewModel.getWeatherDataFor(indexPathRow: indexPathRow)
-        weatherTempLabel.text =  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.temp)
+        self.weatherTempLabel.text =  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.temp)
         let weatherImgageIconName = weatherData.weatherCondition.first!.weatherImage
         let weatherImageURL = Constant.weatherImageURL+weatherImgageIconName+"@2x.png"
-        weatherDetailImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
+        self.weatherDetailImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
         animateImage()
-        weatherDescriptionLabel.text = weatherData.weatherCondition.first!.description
-        feelsLikeWeatherLabel.text = "Feels like " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.feelsLikeTemp)
-        maximumWeatherLabel.text = "↑" + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.maxTemp)
-        minimumWeatherLabel.text = "↓" +  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.minTemp)
-        windSpeedWeatherLabel.text = String(weatherData.windInformation.windspeed) + " miles/hour"
+        self.weatherDescriptionLabel.text = weatherData.weatherCondition.first!.description
+        self.feelsLikeWeatherLabel.text = "Feels like " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.feelsLikeTemp)
+        self.maximumWeatherLabel.text = "↑" + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.maxTemp)
+        self.minimumWeatherLabel.text = "↓" +  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.minTemp)
+        self.windSpeedWeatherLabel.text = String(weatherData.windInformation.windspeed) + " miles/hour"
         windSpeedImageView.rotate360Degrees()
     }
     

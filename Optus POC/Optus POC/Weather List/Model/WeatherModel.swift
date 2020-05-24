@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CityWeatherDataModel: Decodable {
+struct CityWeatherDataModel: Decodable {
     
     let completeList: [WeatherModel]
     let count: Int
@@ -20,7 +20,7 @@ class CityWeatherDataModel: Decodable {
     
 }
 
-class WeatherModel: Decodable {
+struct WeatherModel: Decodable {
 
     var id: Int
     var visibility: Int32?

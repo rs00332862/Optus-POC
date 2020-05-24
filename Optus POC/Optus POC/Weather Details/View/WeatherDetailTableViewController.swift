@@ -16,15 +16,13 @@ class WeatherDetailTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.title = WeatherDataViewModel.getCityNameFor(indexPathRow: selectedCellIndex!)
         getWeatherDataForCity()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        // self.tableView.reloadData()
-    }
     
     func getWeatherDataForCity() {
-        weeklyWeatherViewModel.getWeeklyWeatherForCity {response in
+        weeklyWeatherViewModel.getWeeklyWeatherForCity(selectedCellIndex: selectedCellIndex!){response in
             switch(response) {
             case .success:
                 DispatchQueue.main.async {
@@ -36,15 +34,6 @@ class WeatherDetailTableViewController: UITableViewController {
                 self.displayErrorMessageWith(messageString: error.localizedDescription)
             }
         }
-    }
-    
-    /// Method to dsiplay error messages on veiwcontroller
-    ///
-    /// - Parameter messageString: String to be used while displaying error message
-    func displayErrorMessageWith(messageString:String) {
-        let alert = UIAlertController(title: NSLocalizedString("ErrorHeader", comment: ""), message: messageString , preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OkButton", comment: ""), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Table view data source

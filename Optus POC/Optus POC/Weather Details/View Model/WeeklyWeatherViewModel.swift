@@ -10,8 +10,11 @@ import Foundation
 class WeeklyWeatherViewModel {
     static var weeklyDataArray: [DailyWeather] = [DailyWeather]()
     
-    func getWeeklyWeatherForCity(completion: @escaping (Result<Bool, Error>) -> Void) {
-        NetworkManager.sharedInstance.getDataFromWebService(urlString: Constant.getWeeklyDataForCityURL){ (responseData: Result<WeeklyWeatherModel,Error>) in
+    func getWeeklyWeatherForCity(selectedCellIndex: Int,completion: @escaping (Result<Bool, Error>) -> Void) {
+        
+        var urlString = Constant.getWeeklyDataForCityURL
+        urlString += String(WeatherDataViewModel.getCityIDFor(indexPathRow: selectedCellIndex))
+        NetworkManager.sharedInstance.getDataFromWebService(urlString: urlString){ (responseData: Result<WeeklyWeatherModel,Error>) in
             DispatchQueue.main.async {
                 switch(responseData) {
                 case .success(let responseWeatherList):

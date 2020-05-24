@@ -17,8 +17,8 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
     
     func setDailyWeatherCellData() {
         let dailtDataObject = weeklyWeatherViewModel.getWeeklyDataObjectFor(indexPathRow: self.tag)
-        minAndMaxWeatherLabel.text = "↑ " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.maximumTemperature) + "   " + "↓"
-  + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.minimumTemperature)
+        minAndMaxWeatherLabel.text = "↑ " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.maxTemp) + "   " + "↓"
+  + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.minTemp)
         let weatherImgageIconName = dailtDataObject.weatherCondition.first!.weatherImage
         let weatherImageURL = Constant.weatherImageURL+weatherImgageIconName+"@2x.png"
         dailyWeatherImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
@@ -28,7 +28,7 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
     func converDateFrom(timestamp: Double) -> String {
         let date = Date(timeIntervalSince1970: timestamp)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, d MMM"
+        dateFormatter.dateFormat = "hh a"
         return dateFormatter.string(from: date)
     }
 }

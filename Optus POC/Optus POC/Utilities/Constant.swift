@@ -12,11 +12,9 @@ class Constant {
     static let weatherCustomCellIdentifier = "WeatherTableViewCell"
     static let baseURL = "https://api.openweathermap.org/data/"
     static let urlVersion = "2.5/"
-    static let getWeatherListForGroupURL = baseURL+urlVersion+"group?APPID=4228b7f35b02f5f55940f57fadc298fb&id=4163971,2147714,2174003"
-    //https://api.openweathermap.org/data/2.5/forecast/daily?id=524901&appid=7b8013e5f9448fe9ad83da81f05bd251
-    //https://api.openweathermap.org/data/2.5/forecast/daily?q=Melbourne&cnt=7&appid=7b8013e5f9448fe9ad83da81f05bd251
-    //https://api.openweathermap.org/data/2.5/onecall?lat=-27.47&lon=153.03&exclude=hourly,minutely&appid=4228b7f35b02f5f55940f57fadc298fb
-    static let getWeeklyDataForCityURL = baseURL+urlVersion+"onecall?lat=-27.47&lon=153.03&exclude=hourly,minutely&appid=4228b7f35b02f5f55940f57fadc298fb"
+    static let getWeatherListForGroupURL = baseURL+urlVersion+"group?APPID=" + valueForAPIKey(keyName:"API_CLIENT_KEY") + "&id="
+    //static let getWeeklyDataForCityURL = baseURL+urlVersion+"onecall?lat=-27.47&lon=153.03&exclude=hourly,minutely&appid=4228b7f35b02f5f55940f57fadc298fb"
+    static let getWeeklyDataForCityURL = baseURL+urlVersion+"forecast?appid=" + valueForAPIKey(keyName:"API_CLIENT_KEY") + "&cnt=8&id=" //4228b7f35b02f5f55940f57fadc298fb&cnt=8&id=4163971&"
     static let weatherImageURL = "http://openweathermap.org/img/wn/"
     static let weatherDetailCustomCellIdentifier = "weatherDetailCustomCell"
     
@@ -28,6 +26,13 @@ class Constant {
         measurementFormatter.unitStyle = .short
         measurementFormatter.numberFormatter.maximumFractionDigits = 0
         measurementFormatter.unitOptions = .temperatureWithoutUnit
-       return measurementFormatter.string(from: measurement)
+        return measurementFormatter.string(from: measurement)
+    }
+    
+    static func valueForAPIKey(keyName:String) -> String {
+        let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
+        let plist = NSDictionary(contentsOfFile:filePath!)
+        let value = plist?.object(forKey: keyName) as! String
+        return value
     }
 }

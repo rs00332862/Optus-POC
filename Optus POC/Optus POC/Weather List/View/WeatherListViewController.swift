@@ -11,7 +11,7 @@ import UIKit
 class WeatherListViewController: UITableViewController {
     
     var weatherDataModel = WeatherDataViewModel()
-    
+    var timer : Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +21,10 @@ class WeatherListViewController: UITableViewController {
         self.getWeatherDataFromViewModel()
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
         self.title = "Weather"
+        timer = Timer.scheduledTimer(withTimeInterval: 900.0, repeats: true) { timer in
+            print("Timer fired!")
+            self.getWeatherDataFromViewModel()
+        }
     }
     
     /// Fetch weather data from view model class
@@ -48,6 +52,7 @@ class WeatherListViewController: UITableViewController {
             let destinationVC = segue.destination as! WeatherDetailTableViewController
             destinationVC.selectedCellIndex = self.tableView.indexPathForSelectedRow?.row
         }
+        timer?.invalidate()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,13 +68,6 @@ class WeatherListViewController: UITableViewController {
     
     func tableView(_ tableView: UITableView, numberOfSectionsInTableView section: Int) -> Int {
         return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(String(indexPath.row))
-//        let viewController = WeatherDetailTableViewController()
-//        viewController.selectedCellIndex = indexPath.row
-//        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

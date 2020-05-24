@@ -40,8 +40,8 @@ class WeatherDetailTableViewCell: UITableViewCell {
     
     private func animateImage() {
         let options: UIView.AnimationOptions = [.curveEaseInOut,
-        .repeat,
-        .autoreverse]
+                                                .repeat,
+                                                .autoreverse]
         UIView.animate(withDuration: 3,
                        delay: 0.3,
                        options: options,

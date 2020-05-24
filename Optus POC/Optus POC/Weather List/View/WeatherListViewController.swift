@@ -19,6 +19,7 @@ class WeatherListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.getWeatherDataFromViewModel()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
         self.title = "Weather"
     }
     
@@ -32,7 +33,9 @@ class WeatherListViewController: UITableViewController {
             switch(result) {
             case .success:
                 print("Sucess")
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 self.displayErrorMessageWith(messageString: error.localizedDescription)
             }

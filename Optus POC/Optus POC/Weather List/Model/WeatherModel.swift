@@ -12,16 +12,13 @@ struct CityWeatherDataModel: Decodable {
     
     let completeList: [WeatherModel]
     let count: Int
-    
     enum CodingKeys: String, CodingKey {
         case completeList = "list"
         case count = "cnt"
     }
-    
 }
 
 struct WeatherModel: Decodable {
-
     var id: Int
     var visibility: Int32?
     var cityName: String?

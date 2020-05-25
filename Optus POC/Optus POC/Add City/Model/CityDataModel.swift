@@ -16,10 +16,8 @@ struct CityModel: Decodable {
     var cityName: String
     var cityID: Int
     
-    
     enum CodingKeys: String, CodingKey {
         case cityID = "id"
         case cityName = "name"
-        
     }
 }

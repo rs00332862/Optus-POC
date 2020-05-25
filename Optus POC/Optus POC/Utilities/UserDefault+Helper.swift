@@ -60,6 +60,8 @@ class UserDefaultHelper {
             if(savedCityData.contains(String(",,"))) {
                 savedCityData = savedCityData.replacingOccurrences(of: ",,", with: ",")
             }
+            let characterSet = CharacterSet.init(charactersIn: ",")
+            savedCityData = savedCityData.trimmingCharacters(in: characterSet)
         }
         UserDefaults.standard.set(savedCityData, forKey: "CityData")
         completion()

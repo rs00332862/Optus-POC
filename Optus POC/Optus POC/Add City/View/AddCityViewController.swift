@@ -29,7 +29,10 @@ class AddCityViewController: UITableViewController {
         }
     }
     
-    func fetchCityData() {
+    //MARK: - class private methods
+    
+    //method to fetch city data from locally stored JSON file
+    private func fetchCityData() {
         CityViewModel.readCityDataFromJSON { response in
             self.stopActivityIndicator()
             switch(response) {
@@ -42,21 +45,20 @@ class AddCityViewController: UITableViewController {
     }
     
     /// Method to setup search view controller on view controller
-    func setUpSearchViewController() {
+    private func setUpSearchViewController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         if #available(iOS 13.0, *) {
             searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("SearchTextFieldPlaceHolderText", comment: ""),attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue])
         } else {
             searchController.searchBar.placeholder = NSLocalizedString("SearchTextFieldPlaceHolderText", comment: "")
-        }  //
-        
-        
+        }
         searchController.searchBar.barTintColor = UIColor.init(red: 35.0/255, green: 163.0/255, blue: 229.0/255, alpha: 1)
-        
         self.tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
     }
+    
+    //MARK: - Table view delegate and data source methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cityViewModel.filteredCityList.count
@@ -68,9 +70,9 @@ class AddCityViewController: UITableViewController {
         UserDefaultHelper.saveSeclectedCityObject(cityData: lastCityObject){
             result in
             if result {
-                 self.navigationController?.popViewController(animated: true)
+                self.navigationController?.popViewController(animated: true)
             } else {
-                self.displayErrorMessageWith(messageString: "City already exist")
+                self.displayErrorMessageWith(messageString: NSLocalizedString("CityExistMessage", comment: ""))
             }
         }
     }

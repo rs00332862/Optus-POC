@@ -12,8 +12,10 @@ class WeatherDataViewModel {
     static var weatherListArray: [WeatherModel] = [WeatherModel]()
     var weatherListCount: Int = 0
     
+    /// Method to initiate web service call to retrive weather data for saved cities
+    ///
+    /// - Parameter completion: completion handlor to manage and return response from service
     func getWeatherForCitiesList(completion: @escaping (Result<Bool, Error>) -> Void) {
-        
         var urlString = Constant.getWeatherListForGroupURL
         let selectedCityIDs = UserDefaultHelper.getAllSecletdCitieIDs()
         if (selectedCityIDs != "") {
@@ -34,14 +36,23 @@ class WeatherDataViewModel {
         }
     }
     
+    /// Method to read weather data for provided index
+    ///
+    /// - Parameter indexPathRow: index path which will be use to retrive data from view model
     func getWeatherDataFor(indexPathRow: Int) -> WeatherModel {
         return WeatherDataViewModel.self.weatherListArray[indexPathRow]
     }
     
+    /// Method to get city name for provided index
+    ///
+    /// - Parameter indexPathRow: index path which will be use to retrive data from view model
     static func getCityNameFor(indexPathRow: Int) -> String {
         return WeatherDataViewModel.self.weatherListArray[indexPathRow].cityName!
     }
     
+    /// Method to get city ID for provided index
+    ///
+    /// - Parameter indexPathRow: index path which will be use to retrive data from view model
     static func getCityIDFor(indexPathRow: Int) -> Int {
         return WeatherDataViewModel.self.weatherListArray[indexPathRow].id
     }

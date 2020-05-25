@@ -14,7 +14,7 @@ class Constant {
     static let urlVersion = "2.5/"
     static let getWeatherListForGroupURL = baseURL+urlVersion+"group?APPID=" + valueForAPIKey(keyName:"API_CLIENT_KEY") + "&id="
     //static let getWeeklyDataForCityURL = baseURL+urlVersion+"onecall?lat=-27.47&lon=153.03&exclude=hourly,minutely&appid=4228b7f35b02f5f55940f57fadc298fb"
-    static let getWeeklyDataForCityURL = baseURL+urlVersion+"forecast?appid=" + valueForAPIKey(keyName:"API_CLIENT_KEY") + "&cnt=8&id=" //4228b7f35b02f5f55940f57fadc298fb&cnt=8&id=4163971&"
+    static let getWeeklyDataForCityURL = baseURL+urlVersion+"forecast?appid=" + valueForAPIKey(keyName:"API_CLIENT_KEY") + "&cnt=8&id="
     static let weatherImageURL = "http://openweathermap.org/img/wn/"
     static let weatherDetailCustomCellIdentifier = "weatherDetailCustomCell"
     

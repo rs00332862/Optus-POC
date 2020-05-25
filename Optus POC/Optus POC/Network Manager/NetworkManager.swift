@@ -14,7 +14,7 @@ class NetworkManager {
     
     /// Method to get data from webservice
     ///
-    /// - Parameter urlString: URL to make get request call
+    /// - Parameter urlString: URL whihc will be used to make get request call
     func getDataFromWebService<T: Decodable>(urlString: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let webServiceURL = URL.init(string: urlString) else { return }
         URLSession.shared.dataTask(with: webServiceURL) { (data, response, error) in

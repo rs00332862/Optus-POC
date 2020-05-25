@@ -24,9 +24,9 @@ class WeeklyWeatherTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
 
+    //MARK: - collection view  data source methods
 extension WeeklyWeatherTableViewCell: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return weeklyWeatherViewModel.getWeeklyWeatherDataCount()
@@ -42,6 +42,4 @@ extension WeeklyWeatherTableViewCell: UICollectionViewDelegate,UICollectionViewD
         cell.setDailyWeatherCellData()
         return cell
     }
-    
-    
 }

@@ -117,7 +117,7 @@ class WeatherListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    //MARK: - Table view deligate and data source methods
+    //MARK: - Table view delegate and data source methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherDataModel.weatherListCount

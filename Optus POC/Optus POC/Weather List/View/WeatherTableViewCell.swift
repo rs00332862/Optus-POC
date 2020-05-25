@@ -26,7 +26,4 @@ class WeatherTableViewCell: UITableViewCell {
         //+"@2x.png"
         weatherImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
     }
-    
-    
-    
 }

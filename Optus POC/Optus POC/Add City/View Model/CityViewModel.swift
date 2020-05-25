@@ -11,6 +11,7 @@ class CityViewModel {
     static var completeCityList: [CityModel] = [CityModel]()
     var filteredCityList: [CityModel] = [CityModel]()
     
+    /// method to read city data from locally stored JSON file
     static func readCityDataFromJSON(completion: @escaping (Result<Bool, Error>) -> Void) {
         if let path = Bundle.main.path(forResource: "CityList", ofType: "json") {
             do {
@@ -30,6 +31,9 @@ class CityViewModel {
         }
     }
     
+    /// method to filter city data by provoded string
+    ///
+    /// - Parameter string: string which will be used to search for city
     func filterCityDataWith(string: String,completion: @escaping () -> ()) {
         filteredCityList = CityViewModel.completeCityList.filter { (city: CityModel) -> Bool in
             return city.cityName.lowercased().contains(string.lowercased())

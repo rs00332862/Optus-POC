@@ -12,6 +12,7 @@ class WeatherDetailTableViewController: UITableViewController {
     
     let weeklyWeatherViewModel = WeeklyWeatherViewModel()
     var selectedCellIndex: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
@@ -20,7 +21,9 @@ class WeatherDetailTableViewController: UITableViewController {
         getWeatherDataForCity()
     }
     
-    
+    /// method to initiate web service call so as to load 24 hours weather data
+    ///
+    /// - Parameter selectedCellIndex: cell index number which will be used retive city ID from view model
     func getWeatherDataForCity() {
         weeklyWeatherViewModel.getWeeklyWeatherForCity(selectedCellIndex: selectedCellIndex!){response in
             switch(response) {
@@ -47,7 +50,6 @@ class WeatherDetailTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 2
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){

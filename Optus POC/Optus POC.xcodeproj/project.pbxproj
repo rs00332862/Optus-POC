@@ -149,9 +149,9 @@
 		F911466A2476882400E26A23 /* Optus POC */ = {
 			isa = PBXGroup;
 			children = (
-				F9684F00247A4CB5003C0682 /* Add City */,
-				F91146B02477D76600E26A23 /* Weather Details */,
 				F911469B2476908800E26A23 /* Weather List */,
+				F91146B02477D76600E26A23 /* Weather Details */,
+				F9684F00247A4CB5003C0682 /* Add City */,
 				F91146AB2476CA4100E26A23 /* Network Manager */,
 				F91146A22476924100E26A23 /* Utilities */,
 				F911469C2476909F00E26A23 /* App Delegate */,

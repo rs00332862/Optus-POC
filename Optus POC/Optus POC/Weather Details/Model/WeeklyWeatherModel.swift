@@ -27,15 +27,3 @@ struct DailyWeather: Decodable {
         case weatherCondition = "weather"
     }
 }
-
-struct Temperature: Decodable {
-    var maximumTemperature: Double
-    var minimumTemperature: Double
-    var temperature:Double
-    
-    enum CodingKeys: String, CodingKey {
-        case maximumTemperature = "max"
-        case minimumTemperature = "min"
-        case temperature = "temp"
-    }
-}

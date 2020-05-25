@@ -20,8 +20,9 @@ class WeatherDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var windSpeedWeatherLabel: UILabel!
     @IBOutlet weak var windSpeedImageView: UIImageView!
     
+    
+    /// method to set weather data on weather detail screen
     func setWeatherDetailCellFor(indexPathRow: Int) {
-        
         let weatherData = weatherDataViewModel.getWeatherDataFor(indexPathRow: indexPathRow)
         self.weatherTempLabel.text =  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.temp)
         let weatherImgageIconName = weatherData.weatherCondition.first!.weatherImage
@@ -37,6 +38,7 @@ class WeatherDetailTableViewCell: UITableViewCell {
         windSpeedImageView.rotate360Degrees()
     }
     
+    /// method to animate weagther image view
     private func animateImage() {
         let options: UIView.AnimationOptions = [.curveEaseInOut,
                                                 .repeat,

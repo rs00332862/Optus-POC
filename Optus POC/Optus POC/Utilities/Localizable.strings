@@ -12,3 +12,4 @@
 "AddCityScreenTitleText" = "Add City";
 "FeelsLike" = "Feels like ";
 "WindSpeedText" = " miles/hour";
+"CityExistMessage" = "City already added";

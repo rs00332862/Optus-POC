@@ -39,6 +39,7 @@
 		F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9AD0991247B93AF003CB487 /* Localizable.strings */; };
 		F9AD0994247BA817003CB487 /* AddCity_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0993247BA817003CB487 /* AddCity_Test.swift */; };
 		F9AD0996247BBB6C003CB487 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0995247BBB6C003CB487 /* Reachability.swift */; };
+		F9AD0998247BF4C4003CB487 /* String+Capital.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0997247BF4C4003CB487 /* String+Capital.swift */; };
 		F9F6174B247A634500810F99 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6174A247A634500810F99 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		F9AD0991247B93AF003CB487 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F9AD0993247BA817003CB487 /* AddCity_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCity_Test.swift; sourceTree = "<group>"; };
 		F9AD0995247BBB6C003CB487 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F9AD0997247BF4C4003CB487 /* String+Capital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Capital.swift"; sourceTree = "<group>"; };
 		F9F6174A247A634500810F99 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,6 +241,7 @@
 				F9AD098F247B012E003CB487 /* Overlay.swift */,
 				F9AD0991247B93AF003CB487 /* Localizable.strings */,
 				F9AD0995247BBB6C003CB487 /* Reachability.swift */,
+				F9AD0997247BF4C4003CB487 /* String+Capital.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				F9684EF824792EAD003C0682 /* WeeklyWeatherModel.swift in Sources */,
 				F9AD0996247BBB6C003CB487 /* Reachability.swift in Sources */,
 				F91146BB247851BE00E26A23 /* WeatherDetailTableViewController.swift in Sources */,
+				F9AD0998247BF4C4003CB487 /* String+Capital.swift in Sources */,
 				F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */,
 				F9684EFD24795802003C0682 /* DailyWeatherCollectionViewCell.swift in Sources */,
 				F91146AA2476CA3A00E26A23 /* NetworkManager.swift in Sources */,

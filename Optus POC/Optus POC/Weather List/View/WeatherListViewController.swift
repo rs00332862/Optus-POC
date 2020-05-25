@@ -108,6 +108,7 @@ class WeatherListViewController: UITableViewController {
         let sepratorLabel = UILabel()
         sepratorLabel.frame = CGRect(x: 50, y: 0, width: 5, height: 40)
         sepratorLabel.text = "/"
+        sepratorLabel.textColor = UIColor.white
         footerView.addSubview(sepratorLabel)
         buttonFahrenheit.frame = CGRect(x: 55, y: 5, width: 30, height: 30)
         buttonFahrenheit.setTitle("F", for: .normal)

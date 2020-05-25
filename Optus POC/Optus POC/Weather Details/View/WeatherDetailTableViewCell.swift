@@ -28,7 +28,8 @@ class WeatherDetailTableViewCell: UITableViewCell {
         let weatherImageURL = Constant.weatherImageURL+weatherImgageIconName+"@2x.png"
         self.weatherDetailImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
         animateImage()
-        self.weatherDescriptionLabel.text = weatherData.weatherCondition.first!.description
+        let descriptionString = weatherData.weatherCondition.first!.description as String
+        self.weatherDescriptionLabel.text = descriptionString.firstUppercased
         self.feelsLikeWeatherLabel.text = NSLocalizedString("FeelsLike", comment: "") + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.feelsLikeTemp)
         self.maximumWeatherLabel.text = "↑" + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.maxTemp)
         self.minimumWeatherLabel.text = "↓" +  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.minTemp)

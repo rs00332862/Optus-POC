@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+/// Use this extension to make first charactor of string uppercase
 extension StringProtocol {
     var firstUppercased: String { return prefix(1).uppercased() + dropFirst() }
 }

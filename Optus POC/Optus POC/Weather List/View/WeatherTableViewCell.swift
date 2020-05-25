@@ -15,6 +15,7 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var cityTemperature: UILabel!
     
+    /// Method to set data on weather list table view cell
     func setWeatherCellWithData() {
         let weatherData = weatherDataViewModel.getWeatherDataFor(indexPathRow: self.tag)
         cityName.text =  weatherData.cityName

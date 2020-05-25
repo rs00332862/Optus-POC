@@ -11,15 +11,16 @@ import UIKit
 
 extension UIImageView {
     
+    /// Method to load image from provided URL and store in cache
+    ///
+    /// - Parameter URLString: URL from which image will be loaded
     func loadImageFromURL(_ URLString: String, placeHolder: UIImage?) {
         
         if URLString .isEmpty{
             self.image = placeHolder
             return
         }
-        
         let imageCache = NSCache<NSString, UIImage>()
-        
         self.image = #imageLiteral(resourceName: "weatherPlaceHolder")
         let imageUrl = URLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
@@ -28,7 +29,6 @@ extension UIImageView {
             self.image = cachedImage
             return
         }
-        
         //download imaghe from provided URL
         if let urlImage = URL(string: imageUrl) {
             URLSession.shared.dataTask(with: urlImage, completionHandler: { (data, response, error) in
@@ -51,6 +51,7 @@ extension UIImageView {
         }
     }
     
+    /// Method to rotate image round to animate as wind
     func rotate360Degrees(duration: CFTimeInterval = 3) {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0

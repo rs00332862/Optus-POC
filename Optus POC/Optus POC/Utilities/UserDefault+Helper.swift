@@ -11,8 +11,7 @@ import UIKit
 
 class UserDefaultHelper {
     
-    //one time setup for initial cities
-    
+    //one time setup for initial cities, method will be used to store defaut cities which will be displayed on weather list screen and also to store default temp unit
     static func saveDefaultCities(){
         let userDefaults = UserDefaults.standard
         if (userDefaults.value(forKey: "InitialLoad") != nil) {
@@ -24,6 +23,9 @@ class UserDefaultHelper {
         }
     }
     
+    /// Method to save selected city ID into user default
+    ///
+    /// - Parameter cityData: cityData object from which we can retrive the cityID whcih will be stored in user default
     static func saveSeclectedCityObject(cityData: CityModel,completion: (Bool) -> Void){
         var savedCityData = getAllSecletdCitieIDs()
         if(savedCityData.contains(String(cityData.cityID))) {
@@ -38,6 +40,7 @@ class UserDefaultHelper {
         }
     }
     
+     /// Method to get all saved cities from user default
     static func getAllSecletdCitieIDs() -> String {
         let userDefaults = UserDefaults.standard
         if let cityData = userDefaults.value(forKey: "CityData") {
@@ -47,6 +50,9 @@ class UserDefaultHelper {
         }
     }
     
+    /// Method to delete selected city from user default
+    ///
+    /// - Parameter cityID: ID which will be deleted from user default
     static func deleteSelectedCityFromUserDefault(cityID: Int,completion: () -> ()){
         var savedCityData = UserDefaultHelper.getAllSecletdCitieIDs()
         if(savedCityData.contains(String(cityID))) {
@@ -59,10 +65,14 @@ class UserDefaultHelper {
         completion()
     }
     
+    /// Method to set temp unit on user default
+    ///
+    /// - Parameter unit: String to be saved in user default
     static func setTempratureUnit(unit: String){
         UserDefaults.standard.set(unit, forKey: "DefaultUnit")
     }
     
+    /// Method to get temp unit from user default
     static func getTempratureUnit() -> String{
         let defaultUnit = UserDefaults.standard
         return defaultUnit.value(forKey: "DefaultUnit") as! String

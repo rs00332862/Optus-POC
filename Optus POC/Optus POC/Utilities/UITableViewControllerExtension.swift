@@ -13,6 +13,8 @@ var activityLoaderView: UIView?
 extension UITableViewController {
     
     open override func viewDidLoad() {
+        
+        //perform internet check each time table view controller is laoded
         if Reachability.isConnectedToNetwork(){
             print("Internet Connection Available!")
         }else{
@@ -36,6 +38,7 @@ extension UITableViewController {
         self.view.bringSubviewToFront(activityLoaderView!)
     }
     
+    ///function to remove activity indicator from view controller
     func stopActivityIndicator() {
         activityLoaderView?.removeFromSuperview()
         activityLoaderView = nil

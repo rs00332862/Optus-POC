@@ -19,6 +19,9 @@ class Constant {
     static let weatherDetailCustomCellIdentifier = "weatherDetailCustomCell"
     
     
+    /// Method to convert kelvin temp to desired unit format
+    ///
+    /// - Parameter kelvinTemprecture: Kelvin temp received from service and will be used to convert is desired format
     static func convertTempFromKelvinToCelcius(kelvinTemprecture: Double) -> String {
         var measurement = Measurement(value: kelvinTemprecture, unit: UnitTemperature.kelvin)
         if(UserDefaultHelper.getTempratureUnit() == "C"){
@@ -33,6 +36,9 @@ class Constant {
         return measurementFormatter.string(from: measurement)
     }
     
+    /// Method to read open weather api key store in plist file
+    ///
+    /// - Parameter keyName: Key name which will be used to read data from plist file
     static func valueForAPIKey(keyName:String) -> String {
         let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
         let plist = NSDictionary(contentsOfFile:filePath!)

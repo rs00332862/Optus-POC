@@ -35,7 +35,6 @@
 		F9AD098A247A8EE3003CB487 /* UITableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */; };
 		F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */; };
 		F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9AD098D247AF66B003CB487 /* ApiKeys.plist */; };
-		F9AD0990247B012E003CB487 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098F247B012E003CB487 /* Overlay.swift */; };
 		F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9AD0991247B93AF003CB487 /* Localizable.strings */; };
 		F9AD0994247BA817003CB487 /* AddCity_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0993247BA817003CB487 /* AddCity_Test.swift */; };
 		F9AD0996247BBB6C003CB487 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0995247BBB6C003CB487 /* Reachability.swift */; };
@@ -95,7 +94,6 @@
 		F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExtension.swift; sourceTree = "<group>"; };
 		F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Helper.swift"; sourceTree = "<group>"; };
 		F9AD098D247AF66B003CB487 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
-		F9AD098F247B012E003CB487 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		F9AD0991247B93AF003CB487 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F9AD0993247BA817003CB487 /* AddCity_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCity_Test.swift; sourceTree = "<group>"; };
 		F9AD0995247BBB6C003CB487 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */,
 				F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */,
 				F9AD098D247AF66B003CB487 /* ApiKeys.plist */,
-				F9AD098F247B012E003CB487 /* Overlay.swift */,
 				F9AD0991247B93AF003CB487 /* Localizable.strings */,
 				F9AD0995247BBB6C003CB487 /* Reachability.swift */,
 				F9AD0997247BF4C4003CB487 /* String+Capital.swift */,
@@ -468,7 +465,6 @@
 				F91146A1247690FD00E26A23 /* WeatherTableViewCell.swift in Sources */,
 				F9684F05247A5695003C0682 /* CityViewModel.swift in Sources */,
 				F91146702476882500E26A23 /* WeatherListViewController.swift in Sources */,
-				F9AD0990247B012E003CB487 /* Overlay.swift in Sources */,
 				F91146A82476BD0300E26A23 /* TempInformation.swift in Sources */,
 				F91146B72477E53A00E26A23 /* WeatherDetailTableViewCell.swift in Sources */,
 				F91146A42476925200E26A23 /* Constant.swift in Sources */,

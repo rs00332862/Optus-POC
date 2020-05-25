@@ -81,7 +81,10 @@ class WeatherListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             // handle delete, remove city name from weatehr list
-            
+            let cityID = WeatherDataViewModel.getCityIDFor(indexPathRow: indexPath.row)
+            UserDefaultHelper.deleteSelectedCityFromUserDefault(cityID: cityID){
+                self.getWeatherDataFromViewModel()
+            }
         }
     }
 }

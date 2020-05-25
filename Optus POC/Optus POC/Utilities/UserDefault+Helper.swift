@@ -42,7 +42,15 @@ class UserDefaultHelper {
         }
     }
     
-    func deleteSelectedCityFromUserDefault(cityID: Int,completion: @escaping (Result<Bool, Error>) -> Void){
-        
+    static func deleteSelectedCityFromUserDefault(cityID: Int,completion: () -> ()){
+        var savedCityData = UserDefaultHelper.getAllSecletdCitieIDs()
+        if(savedCityData.contains(String(cityID))) {
+            savedCityData = savedCityData.replacingOccurrences(of: String(cityID), with: "")
+            if(savedCityData.contains(String(",,"))) {
+                savedCityData = savedCityData.replacingOccurrences(of: ",,", with: ",")
+            }
+        }
+        UserDefaults.standard.set(savedCityData, forKey: "CityData")
+        completion()
     }
 }

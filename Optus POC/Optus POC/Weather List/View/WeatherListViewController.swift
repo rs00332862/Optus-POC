@@ -20,9 +20,8 @@ class WeatherListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.getWeatherDataFromViewModel()
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
-        self.title = "Weather"
+        self.title = NSLocalizedString("WeatherListTitleText", comment: "")
         timer = Timer.scheduledTimer(withTimeInterval: 900.0, repeats: true) { timer in
-            print("Timer fired!")
             self.getWeatherDataFromViewModel()
         }
     }
@@ -36,7 +35,6 @@ class WeatherListViewController: UITableViewController {
             self.stopActivityIndicator()
             switch(result) {
             case .success:
-                print("Sucess")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -52,7 +50,9 @@ class WeatherListViewController: UITableViewController {
             let destinationVC = segue.destination as! WeatherDetailTableViewController
             destinationVC.selectedCellIndex = self.tableView.indexPathForSelectedRow?.row
         }
+        self.title = "Back"
         timer?.invalidate()
+
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

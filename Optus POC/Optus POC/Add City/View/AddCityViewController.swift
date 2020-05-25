@@ -15,12 +15,12 @@ class AddCityViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Add City"
-        //OverlayView.shared.showOverlay(view: UIApplication.shared.keyWindow!)
+        self.title = NSLocalizedString("AddCityScreenTitleText", comment: "")
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
         self.addActivityIndicator()
         setUpSearchViewController()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         fetchCityData()
     }
@@ -41,8 +41,16 @@ class AddCityViewController: UITableViewController {
     func setUpSearchViewController() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("SearchTextFieldPlaceHolderText", comment: "")
-        navigationItem.searchController = searchController
+        if #available(iOS 13.0, *) {
+            searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("SearchTextFieldPlaceHolderText", comment: ""),attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue])
+        } else {
+            searchController.searchBar.placeholder = NSLocalizedString("SearchTextFieldPlaceHolderText", comment: "")
+        }  //
+        
+        
+        searchController.searchBar.barTintColor = UIColor.init(red: 35.0/255, green: 163.0/255, blue: 229.0/255, alpha: 1)
+        
+        self.tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
     }
     
@@ -52,7 +60,7 @@ class AddCityViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //saveSeclectedCityObject
-         let lastCityObject = cityViewModel.filteredCityList[indexPath.row]
+        let lastCityObject = cityViewModel.filteredCityList[indexPath.row]
         UserDefaultHelper.saveSeclectedCityObject(cityData: lastCityObject){
             self.navigationController?.popViewController(animated: true)
         }

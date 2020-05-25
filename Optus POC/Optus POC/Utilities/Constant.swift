@@ -25,7 +25,8 @@ class Constant {
         let measurementFormatter = MeasurementFormatter()
         measurementFormatter.unitStyle = .short
         measurementFormatter.numberFormatter.maximumFractionDigits = 0
-        measurementFormatter.unitOptions = .temperatureWithoutUnit
+        measurementFormatter.unitOptions = .providedUnit
+            //NSMeasurementFormatterUnitOptionsNaturalScale
         return measurementFormatter.string(from: measurement)
     }
     

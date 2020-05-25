@@ -36,6 +36,7 @@
 		F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */; };
 		F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9AD098D247AF66B003CB487 /* ApiKeys.plist */; };
 		F9AD0990247B012E003CB487 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098F247B012E003CB487 /* Overlay.swift */; };
+		F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9AD0991247B93AF003CB487 /* Localizable.strings */; };
 		F9F6174B247A634500810F99 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6174A247A634500810F99 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Helper.swift"; sourceTree = "<group>"; };
 		F9AD098D247AF66B003CB487 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		F9AD098F247B012E003CB487 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		F9AD0991247B93AF003CB487 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F9F6174A247A634500810F99 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +232,7 @@
 				F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */,
 				F9AD098D247AF66B003CB487 /* ApiKeys.plist */,
 				F9AD098F247B012E003CB487 /* Overlay.swift */,
+				F9AD0991247B93AF003CB487 /* Localizable.strings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F91146782476883100E26A23 /* LaunchScreen.storyboard in Resources */,
+				F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */,
 				F9684EFF247A4C3D003C0682 /* CityList.json in Resources */,
 				F91146752476883100E26A23 /* Assets.xcassets in Resources */,
 				F91146732476882500E26A23 /* Main.storyboard in Resources */,

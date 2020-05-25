@@ -29,10 +29,10 @@ class WeatherDetailTableViewCell: UITableViewCell {
         self.weatherDetailImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
         animateImage()
         self.weatherDescriptionLabel.text = weatherData.weatherCondition.first!.description
-        self.feelsLikeWeatherLabel.text = "Feels like " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.feelsLikeTemp)
+        self.feelsLikeWeatherLabel.text = NSLocalizedString("FeelsLike", comment: "") + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.feelsLikeTemp)
         self.maximumWeatherLabel.text = "↑" + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.maxTemp)
         self.minimumWeatherLabel.text = "↓" +  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.minTemp)
-        self.windSpeedWeatherLabel.text = String(weatherData.windInformation.windspeed) + " miles/hour"
+        self.windSpeedWeatherLabel.text = String(weatherData.windInformation.windspeed) + NSLocalizedString("WindSpeedText", comment: "")
         windSpeedImageView.rotate360Degrees()
     }
     

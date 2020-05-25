@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Optus POC
+
+  Created by Rohit on 5/25/20.
+  Copyright © 2020 Rohit. All rights reserved.
+*/
+"ErrorHeader" = "Optus POC";
+"OkButton" = "Ok";
+"SearchTextFieldPlaceHolderText" = "Search For City";
+"WeatherListTitleText" = "Weather App";
+"AddCityScreenTitleText" = "Add City";
+"FeelsLike" = "Feels like ";
+"WindSpeedText" = " miles/hour";

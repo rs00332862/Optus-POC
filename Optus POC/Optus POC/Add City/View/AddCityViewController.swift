@@ -66,7 +66,12 @@ class AddCityViewController: UITableViewController {
         //saveSeclectedCityObject
         let lastCityObject = cityViewModel.filteredCityList[indexPath.row]
         UserDefaultHelper.saveSeclectedCityObject(cityData: lastCityObject){
-            self.navigationController?.popViewController(animated: true)
+            result in
+            if result {
+                 self.navigationController?.popViewController(animated: true)
+            } else {
+                self.displayErrorMessageWith(messageString: "City already exist")
+            }
         }
     }
     

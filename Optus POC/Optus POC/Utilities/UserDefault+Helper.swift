@@ -24,14 +24,18 @@ class UserDefaultHelper {
         }
     }
     
-    static func saveSeclectedCityObject(cityData: CityModel,completion: () -> ()){
+    static func saveSeclectedCityObject(cityData: CityModel,completion: (Bool) -> Void){
         var savedCityData = getAllSecletdCitieIDs()
-        if savedCityData != "" {
-            savedCityData += ","
+        if(savedCityData.contains(String(cityData.cityID))) {
+            completion(false)
+        } else {
+            if savedCityData != "" {
+                savedCityData += ","
+            }
+            savedCityData += String(cityData.cityID)
+            UserDefaults.standard.set(savedCityData, forKey: "CityData")
+            completion(true)
         }
-        savedCityData += String(cityData.cityID)
-        UserDefaults.standard.set(savedCityData, forKey: "CityData")
-        completion()
     }
     
     static func getAllSecletdCitieIDs() -> String {
@@ -56,7 +60,7 @@ class UserDefaultHelper {
     }
     
     static func setTempratureUnit(unit: String){
-          UserDefaults.standard.set(unit, forKey: "DefaultUnit")
+        UserDefaults.standard.set(unit, forKey: "DefaultUnit")
     }
     
     static func getTempratureUnit() -> String{

@@ -37,6 +37,8 @@
 		F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9AD098D247AF66B003CB487 /* ApiKeys.plist */; };
 		F9AD0990247B012E003CB487 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098F247B012E003CB487 /* Overlay.swift */; };
 		F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9AD0991247B93AF003CB487 /* Localizable.strings */; };
+		F9AD0994247BA817003CB487 /* AddCity_Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0993247BA817003CB487 /* AddCity_Test.swift */; };
+		F9AD0996247BBB6C003CB487 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0995247BBB6C003CB487 /* Reachability.swift */; };
 		F9F6174B247A634500810F99 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6174A247A634500810F99 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		F9AD098D247AF66B003CB487 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		F9AD098F247B012E003CB487 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		F9AD0991247B93AF003CB487 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F9AD0993247BA817003CB487 /* AddCity_Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCity_Test.swift; sourceTree = "<group>"; };
+		F9AD0995247BBB6C003CB487 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F9F6174A247A634500810F99 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +168,7 @@
 			children = (
 				F91146822476883200E26A23 /* Optus_POCTests.swift */,
 				F91146842476883200E26A23 /* Info.plist */,
+				F9AD0993247BA817003CB487 /* AddCity_Test.swift */,
 			);
 			path = "Optus POCTests";
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				F9AD098D247AF66B003CB487 /* ApiKeys.plist */,
 				F9AD098F247B012E003CB487 /* Overlay.swift */,
 				F9AD0991247B93AF003CB487 /* Localizable.strings */,
+				F9AD0995247BBB6C003CB487 /* Reachability.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				F91146A42476925200E26A23 /* Constant.swift in Sources */,
 				F91146AF24779CFD00E26A23 /* UIImageView+URLImage.swift in Sources */,
 				F9684EF824792EAD003C0682 /* WeeklyWeatherModel.swift in Sources */,
+				F9AD0996247BBB6C003CB487 /* Reachability.swift in Sources */,
 				F91146BB247851BE00E26A23 /* WeatherDetailTableViewController.swift in Sources */,
 				F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */,
 				F9684EFD24795802003C0682 /* DailyWeatherCollectionViewCell.swift in Sources */,
@@ -481,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AD0994247BA817003CB487 /* AddCity_Test.swift in Sources */,
 				F91146832476883200E26A23 /* Optus_POCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

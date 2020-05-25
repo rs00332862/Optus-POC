@@ -22,11 +22,15 @@ class AddCityViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        fetchCityData()
+        if(CityViewModel.getCityDataCount() == 0) {
+            fetchCityData()
+        } else {
+            self.stopActivityIndicator()
+        }
     }
     
     func fetchCityData() {
-        cityViewModel.readCityDataFromJSON { response in
+        CityViewModel.readCityDataFromJSON { response in
             self.stopActivityIndicator()
             switch(response) {
             case .success:
@@ -78,7 +82,7 @@ class AddCityViewController: UITableViewController {
 extension AddCityViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        cityViewModel.filterEmployeeDataWith(string: searchBar.text!) {
+        cityViewModel.filterCityDataWith(string: searchBar.text!) {
             self.tableView.reloadData()
         }
     }

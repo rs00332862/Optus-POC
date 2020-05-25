@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaultHelper.saveDefaultCities()
         return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

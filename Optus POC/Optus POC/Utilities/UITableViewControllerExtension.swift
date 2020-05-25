@@ -11,6 +11,16 @@ import UIKit
 var activityLoaderView: UIView?
 
 extension UITableViewController {
+    
+    open override func viewDidLoad() {
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+        }else{
+            print("Internet Connection not Available!")
+            displayErrorMessageWith(messageString: "Please connect to internet")
+        }
+    }
+    
     //MARK: - Method Activity Indicator
     
     ///function to add activity indicator on view controller

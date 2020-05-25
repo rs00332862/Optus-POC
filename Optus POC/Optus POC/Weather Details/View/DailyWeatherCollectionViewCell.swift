@@ -17,8 +17,7 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
     
     func setDailyWeatherCellData() {
         let dailtDataObject = weeklyWeatherViewModel.getWeeklyDataObjectFor(indexPathRow: self.tag)
-        minAndMaxWeatherLabel.text = "↑ " + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.maxTemp) + "   " + "↓"
-  + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.minTemp)
+        minAndMaxWeatherLabel.text =  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: dailtDataObject.tempInformation.temp)
         let weatherImgageIconName = dailtDataObject.weatherCondition.first!.weatherImage
         let weatherImageURL = Constant.weatherImageURL+weatherImgageIconName+"@2x.png"
         dailyWeatherImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))

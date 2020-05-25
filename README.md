@@ -16,4 +16,5 @@
 14.	Some unit test cases are added for City add screen and Weather list screen
 15.	Activity indicator is used as application perform any operation to indicate user
 16.	Application support all mobile device sizes and orientation
+17. Open Weather group api "https://api.openweathermap.org/data/2.5/group" is used to fetch weather details for all added cities and forcast api "https://api.openweathermap.org/data/2.5/forecast" is used to get hourly weather detail for particular city
 

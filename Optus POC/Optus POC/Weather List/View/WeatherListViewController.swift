@@ -78,7 +78,12 @@ class WeatherListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if(indexPath.row != 1 && indexPath.row != 2 && indexPath.row != 0) {
+            return true
+        } else {
+            return false
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -12,6 +12,8 @@ class WeatherListViewController: UITableViewController {
     
     var weatherDataModel = WeatherDataViewModel()
     var timer : Timer?
+    var buttonFahrenheit =  UIButton()
+    var buttonCelsius =  UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -44,7 +46,7 @@ class WeatherListViewController: UITableViewController {
             }
         }
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         if (segue.identifier == "WeatherDetail"){
@@ -53,7 +55,7 @@ class WeatherListViewController: UITableViewController {
         }
         self.title = "Back"
         timer?.invalidate()
-
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,36 +94,43 @@ class WeatherListViewController: UITableViewController {
     func addFooterView() {
         let footerView = UIView()
         footerView.backgroundColor = UIColor.clear
-        footerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height:
-        40)
-        let buttonCelsius = UIButton()
+        footerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height:40)
         buttonCelsius.frame = CGRect(x: 20, y: 5, width: 30, height: 30)
         buttonCelsius.setTitle("C", for: .normal)
         buttonCelsius.addTarget(self, action: #selector(self.setCelsius), for: .touchUpInside)
+        buttonCelsius.setTitleColor(UIColor.black, for: .selected)
         buttonCelsius.backgroundColor = UIColor.clear
-        buttonCelsius.isSelected = true
-        footerView.addSubview(buttonCelsius)
         let sepratorLabel = UILabel()
         sepratorLabel.frame = CGRect(x: 50, y: 0, width: 5, height: 40)
         sepratorLabel.text = "/"
         footerView.addSubview(sepratorLabel)
-        let buttonFahrenheit = UIButton()
         buttonFahrenheit.frame = CGRect(x: 55, y: 5, width: 30, height: 30)
         buttonFahrenheit.setTitle("F", for: .normal)
+        buttonFahrenheit.setTitleColor(UIColor.black, for: .selected)
         buttonFahrenheit.addTarget(self, action: #selector(self.setFahrenheit), for: .touchUpInside)
         buttonFahrenheit.backgroundColor = UIColor.clear
+        if(UserDefaultHelper.getTempratureUnit() == "C") {
+            buttonCelsius.isSelected = true
+        } else {
+            buttonFahrenheit.isSelected = true
+        }
+        footerView.addSubview(buttonCelsius)
         footerView.addSubview(buttonFahrenheit)
         self.tableView.tableFooterView = footerView
     }
     
     @objc private func setCelsius()
     {
+        buttonCelsius.isSelected = true
+        buttonFahrenheit.isSelected = false
         UserDefaultHelper.setTempratureUnit(unit: "C")
         self.tableView.reloadData()
     }
     
     @objc private func setFahrenheit()
     {
+        buttonCelsius.isSelected = false
+        buttonFahrenheit.isSelected = true
         UserDefaultHelper.setTempratureUnit(unit: "F")
         self.tableView.reloadData()
     }

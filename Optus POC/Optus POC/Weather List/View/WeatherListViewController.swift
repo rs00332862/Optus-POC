@@ -24,6 +24,7 @@ class WeatherListViewController: UITableViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 900.0, repeats: true) { timer in
             self.getWeatherDataFromViewModel()
         }
+        addFooterView()
     }
     
     /// Fetch weather data from view model class
@@ -86,5 +87,42 @@ class WeatherListViewController: UITableViewController {
                 self.getWeatherDataFromViewModel()
             }
         }
+    }
+    
+    func addFooterView() {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor.clear
+        footerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height:
+        40)
+        let buttonCelsius = UIButton()
+        buttonCelsius.frame = CGRect(x: 20, y: 5, width: 30, height: 30)
+        buttonCelsius.setTitle("C", for: .normal)
+        buttonCelsius.addTarget(self, action: #selector(self.setCelsius), for: .touchUpInside)
+        buttonCelsius.backgroundColor = UIColor.clear
+        buttonCelsius.isSelected = true
+        footerView.addSubview(buttonCelsius)
+        let sepratorLabel = UILabel()
+        sepratorLabel.frame = CGRect(x: 50, y: 0, width: 5, height: 40)
+        sepratorLabel.text = "/"
+        footerView.addSubview(sepratorLabel)
+        let buttonFahrenheit = UIButton()
+        buttonFahrenheit.frame = CGRect(x: 55, y: 5, width: 30, height: 30)
+        buttonFahrenheit.setTitle("F", for: .normal)
+        buttonFahrenheit.addTarget(self, action: #selector(self.setFahrenheit), for: .touchUpInside)
+        buttonFahrenheit.backgroundColor = UIColor.clear
+        footerView.addSubview(buttonFahrenheit)
+        self.tableView.tableFooterView = footerView
+    }
+    
+    @objc private func setCelsius()
+    {
+        UserDefaultHelper.setTempratureUnit(unit: "C")
+        self.tableView.reloadData()
+    }
+    
+    @objc private func setFahrenheit()
+    {
+        UserDefaultHelper.setTempratureUnit(unit: "F")
+        self.tableView.reloadData()
     }
 }

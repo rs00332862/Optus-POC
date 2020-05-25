@@ -21,12 +21,15 @@ class Constant {
     
     static func convertTempFromKelvinToCelcius(kelvinTemprecture: Double) -> String {
         var measurement = Measurement(value: kelvinTemprecture, unit: UnitTemperature.kelvin)
-        measurement.convert(to: UnitTemperature.celsius)
+        if(UserDefaultHelper.getTempratureUnit() == "C"){
+            measurement.convert(to: UnitTemperature.celsius)
+        } else {
+             measurement.convert(to: UnitTemperature.fahrenheit)
+        }
         let measurementFormatter = MeasurementFormatter()
         measurementFormatter.unitStyle = .short
         measurementFormatter.numberFormatter.maximumFractionDigits = 0
         measurementFormatter.unitOptions = .providedUnit
-            //NSMeasurementFormatterUnitOptionsNaturalScale
         return measurementFormatter.string(from: measurement)
     }
     

@@ -20,6 +20,7 @@ class UserDefaultHelper {
         } else {
             UserDefaults.standard.set(true, forKey: "InitialLoad")
             UserDefaults.standard.set("4163971,2147714,2174003", forKey: "CityData")
+            UserDefaults.standard.set("C", forKey: "DefaultUnit")
         }
     }
     
@@ -52,5 +53,14 @@ class UserDefaultHelper {
         }
         UserDefaults.standard.set(savedCityData, forKey: "CityData")
         completion()
+    }
+    
+    static func setTempratureUnit(unit: String){
+          UserDefaults.standard.set(unit, forKey: "DefaultUnit")
+    }
+    
+    static func getTempratureUnit() -> String{
+        let defaultUnit = UserDefaults.standard
+        return defaultUnit.value(forKey: "DefaultUnit") as! String
     }
 }

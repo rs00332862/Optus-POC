@@ -56,4 +56,16 @@ class WeatherDataViewModel {
     static func getCityIDFor(indexPathRow: Int) -> Int {
         return WeatherDataViewModel.self.weatherListArray[indexPathRow].id
     }
+    
+    /// Method to get background image for wether detail screen
+    ///
+    /// - Parameter indexPathRow: index path which will be use to retrive data from view model
+    static func getBackgroundImage(indexPathRow: Int) -> String {
+        let weatherImage = WeatherDataViewModel.self.weatherListArray[indexPathRow].weatherCondition.first?.weatherImage
+        if weatherImage!.contains("n"){
+             return "Night"
+        } else {
+            return "Sun"
+        }
+    }
 }

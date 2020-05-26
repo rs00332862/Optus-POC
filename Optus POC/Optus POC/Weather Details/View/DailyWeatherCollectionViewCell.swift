@@ -22,7 +22,7 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
         let weatherImgageIconName = dailtDataObject.weatherCondition.first!.weatherImage
         let weatherImageURL = Constant.weatherImageURL+weatherImgageIconName+"@2x.png"
         dailyWeatherImageView.loadImageFromURL(weatherImageURL, placeHolder: UIImage.init(named: "weatherPlaceHolder"))
-        weatherDateLabel.text = converDateFrom(timestamp: dailtDataObject.weatherDate)
+        weatherDateLabel.text = convertDateFromString(dateString: dailtDataObject.weatherTime)
     }
     
     /// convert date from timestamp to to hours format
@@ -33,5 +33,13 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh a"
         return dateFormatter.string(from: date)
+    }
+    
+    func convertDateFromString(dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd' 'HH':'mm':'ss"
+        let date = dateFormatter.date(from: dateString)
+        dateFormatter.dateFormat = "hh a"
+        return dateFormatter.string(from: date!)
     }
 }

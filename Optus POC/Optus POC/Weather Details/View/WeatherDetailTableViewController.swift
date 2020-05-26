@@ -15,7 +15,8 @@ class WeatherDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
+        let backGroudImageName = WeatherDataViewModel.getBackgroundImage(indexPathRow: selectedCellIndex!)
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: backGroudImageName))
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.title = WeatherDataViewModel.getCityNameFor(indexPathRow: selectedCellIndex!)
         getWeatherDataForCity()

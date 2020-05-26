@@ -24,15 +24,17 @@ class Constant {
     /// - Parameter kelvinTemprecture: Kelvin temp received from service and will be used to convert is desired format
     static func convertTempFromKelvinToCelcius(kelvinTemprecture: Double) -> String {
         var measurement = Measurement(value: kelvinTemprecture, unit: UnitTemperature.kelvin)
-        if(UserDefaultHelper.getTempratureUnit() == "C"){
-            measurement.convert(to: UnitTemperature.celsius)
-        } else {
-             measurement.convert(to: UnitTemperature.fahrenheit)
-        }
+        
         let measurementFormatter = MeasurementFormatter()
         measurementFormatter.unitStyle = .short
         measurementFormatter.numberFormatter.maximumFractionDigits = 0
         measurementFormatter.unitOptions = .providedUnit
+        if(UserDefaultHelper.getTempratureUnit() == "C"){
+            measurement.convert(to: UnitTemperature.celsius)
+        } else {
+            measurement.convert(to: UnitTemperature.fahrenheit)
+            return measurementFormatter.string(from: measurement) + "F"
+        }
         return measurementFormatter.string(from: measurement)
     }
     

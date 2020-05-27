@@ -51,14 +51,14 @@ class Constant {
     /// convert date from timestamp to  hours format
     ///
     /// - Parameter timestamp: timestamp received from service
-    static func converDateFrom(timestamp: Double, and timeZone: Int) -> String {
+    static func getImageFrom(timestamp: Double, and timeZone: Int) -> String {
         let timestampDate = Date(timeIntervalSince1970: timestamp)
         let format = DateFormatter()
         format.timeZone = TimeZone(secondsFromGMT: timeZone)!
-        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        format.dateFormat = "HH:mm"
         let dateString = format.string(from: timestampDate)
-        let splitDateArray = dateString.split(separator: "T")
-        let splitTimeArray = splitDateArray[1].split(separator: ":")
+        let splitTimeArray = dateString.components(separatedBy: ":")
+        
         let hour = Int(splitTimeArray[0])
         if hour! > 6 && hour! < 18 {
             return "Sun"

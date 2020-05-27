@@ -28,9 +28,9 @@
 		F9684EF824792EAD003C0682 /* WeeklyWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EF724792EAD003C0682 /* WeeklyWeatherModel.swift */; };
 		F9684EFB247934EB003C0682 /* WeeklyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EFA247934EB003C0682 /* WeeklyWeatherViewModel.swift */; };
 		F9684EFD24795802003C0682 /* DailyWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */; };
-		F9684EFF247A4C3D003C0682 /* CityList.json in Resources */ = {isa = PBXBuildFile; fileRef = F9684EFE247A4C3D003C0682 /* CityList.json */; };
 		F9684F03247A4CDB003C0682 /* CityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684F02247A4CDB003C0682 /* CityDataModel.swift */; };
 		F9684F05247A5695003C0682 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9684F04247A5695003C0682 /* CityViewModel.swift */; };
+		F990B6F1247E2EE40061A66A /* current.city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = F990B6F0247E2EE40061A66A /* current.city.list.json */; };
 		F9AD0988247A74E5003CB487 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0987247A74E5003CB487 /* CityTableViewCell.swift */; };
 		F9AD098A247A8EE3003CB487 /* UITableViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */; };
 		F9AD098C247AA0EF003CB487 /* UserDefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */; };
@@ -87,9 +87,9 @@
 		F9684EF724792EAD003C0682 /* WeeklyWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherModel.swift; sourceTree = "<group>"; };
 		F9684EFA247934EB003C0682 /* WeeklyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherViewModel.swift; sourceTree = "<group>"; };
 		F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
-		F9684EFE247A4C3D003C0682 /* CityList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CityList.json; sourceTree = "<group>"; };
 		F9684F02247A4CDB003C0682 /* CityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDataModel.swift; sourceTree = "<group>"; };
 		F9684F04247A5695003C0682 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		F990B6F0247E2EE40061A66A /* current.city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = current.city.list.json; sourceTree = "<group>"; };
 		F9AD0987247A74E5003CB487 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		F9AD0989247A8EE3003CB487 /* UITableViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewControllerExtension.swift; sourceTree = "<group>"; };
 		F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Helper.swift"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		F91146A22476924100E26A23 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F9684EFE247A4C3D003C0682 /* CityList.json */,
+				F990B6F0247E2EE40061A66A /* current.city.list.json */,
 				F91146AE24779CFD00E26A23 /* UIImageView+URLImage.swift */,
 				F91146A32476925200E26A23 /* Constant.swift */,
 				F9AD098B247AA0EF003CB487 /* UserDefault+Helper.swift */,
@@ -427,9 +427,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F990B6F1247E2EE40061A66A /* current.city.list.json in Resources */,
 				F91146782476883100E26A23 /* LaunchScreen.storyboard in Resources */,
 				F9AD0992247B93AF003CB487 /* Localizable.strings in Resources */,
-				F9684EFF247A4C3D003C0682 /* CityList.json in Resources */,
 				F91146752476883100E26A23 /* Assets.xcassets in Resources */,
 				F91146732476882500E26A23 /* Main.storyboard in Resources */,
 				F9AD098E247AF66B003CB487 /* ApiKeys.plist in Resources */,

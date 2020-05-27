@@ -13,7 +13,7 @@ class CityViewModel {
     
     /// method to read city data from locally stored JSON file
     static func readCityDataFromJSON(completion: @escaping (Result<Bool, Error>) -> Void) {
-        if let path = Bundle.main.path(forResource: "CityList", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "current.city.list", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let decoder = JSONDecoder()

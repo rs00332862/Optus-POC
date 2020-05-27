@@ -15,9 +15,11 @@ struct CityDataModel: Decodable {
 struct CityModel: Decodable {
     var cityName: String
     var cityID: Int
+    var countryName: String
     
     enum CodingKeys: String, CodingKey {
         case cityID = "id"
         case cityName = "name"
+        case countryName = "country"
     }
 }

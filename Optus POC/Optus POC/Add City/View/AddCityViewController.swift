@@ -80,7 +80,7 @@ class AddCityViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as! CityTableViewCell
         let lastCityObject = cityViewModel.filteredCityList[indexPath.row]
-        cell.cityNameLabel.text = lastCityObject.cityName
+        cell.cityNameLabel.text = lastCityObject.cityName + ", " + lastCityObject.countryName
         return cell
     }
 }

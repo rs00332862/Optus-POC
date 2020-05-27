@@ -15,6 +15,7 @@ class Optus_POCUITests: XCTestCase {
         
         continueAfterFailure = false
         app = XCUIApplication()
+        app.launch()
     }
     
     override func tearDownWithError() throws {
@@ -22,7 +23,7 @@ class Optus_POCUITests: XCTestCase {
     }
     
     func testToCheckWeatherListHasCell() {
-        app.launch()
+
         let weatherTableView = app.tables.matching(identifier: "Table-WeatherListTableView")
         let firstCell = weatherTableView.cells.element(matching: .cell, identifier: "weatherListCell_0")
         let existencePredicate = NSPredicate(format: "exists == 1")
@@ -31,7 +32,7 @@ class Optus_POCUITests: XCTestCase {
         XCTAssert(XCTWaiter.Result.completed == mobWaiter, "Test Case Failed.")
     }
     func testForWeatherListCellSelection() {
-        app.launch()
+        
         let weatherTableView = app.tables.matching(identifier: "Table-WeatherListTableView")
         let firstCell = weatherTableView.cells.element(matching: .cell, identifier: "weatherListCell_0")
         let predicate = NSPredicate(format: "isHittable == true")
@@ -41,8 +42,19 @@ class Optus_POCUITests: XCTestCase {
         firstCell.tap()
     }
     
-    func testCitySearch() {
-        
+    func testCitySearchTextField() {
+        app.navigationBars["Weather App"].buttons["Add"].tap()
+        let searchForCitySearchField = app.tables["Empty list"].searchFields["Search For City"]
+        searchForCitySearchField.tap()
+        app.tables["Empty list"].searchFields["Search For City"].typeText("Pune")
+        guard let cityName = searchForCitySearchField.value as? String else {
+            XCTFail("Invalid city name.")
+            return
+        }
+        XCTAssertTrue(cityName == "Pune", "Incorrect entry for city name")
     }
     
+    func testCitySearchTableView() {
+    
+    }
 }

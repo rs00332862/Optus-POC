@@ -11,5 +11,5 @@
 "WeatherListTitleText" = "Weather App";
 "AddCityScreenTitleText" = "Add City";
 "FeelsLike" = "Feels like ";
-"WindSpeedText" = " miles/hour";
+"WindSpeedText" = " mi/hr";
 "CityExistMessage" = "City already added";

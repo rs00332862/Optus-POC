@@ -26,6 +26,7 @@ class WeatherListViewController: UITableViewController {
         self.getWeatherDataFromViewModel()
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "Background"))
         self.title = NSLocalizedString("WeatherListTitleText", comment: "")
+        self.tableView.accessibilityIdentifier = "Table-WeatherListTableView"
         timer = Timer.scheduledTimer(withTimeInterval: 900.0, repeats: true) { timer in
             self.getWeatherDataFromViewModel()
         }
@@ -125,6 +126,7 @@ class WeatherListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.weatherCustomCellIdentifier) as! WeatherTableViewCell
+        cell.accessibilityIdentifier = "weatherListCell_\(indexPath.row)"
         cell.tag = indexPath.row
         cell.setWeatherCellWithData()
         return cell

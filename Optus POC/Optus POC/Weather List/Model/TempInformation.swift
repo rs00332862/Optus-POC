@@ -46,3 +46,10 @@ struct WeatherCondition: Decodable {
         case weatherImage = "icon"
     }
 }
+
+struct SysDetails: Decodable  {
+    var timezone: Int
+    enum CodingKeys: String, CodingKey {
+        case timezone = "timezone"
+    }
+}

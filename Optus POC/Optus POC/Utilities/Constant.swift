@@ -47,4 +47,24 @@ class Constant {
         let value = plist?.object(forKey: keyName) as! String
         return value
     }
+    
+    /// convert date from timestamp to  hours format
+    ///
+    /// - Parameter timestamp: timestamp received from service
+    static func converDateFrom(timestamp: Double, and timeZone: Int) -> String {
+        let timestampDate = Date(timeIntervalSince1970: timestamp)
+        let format = DateFormatter()
+        format.timeZone = TimeZone(secondsFromGMT: timeZone)!
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let dateString = format.string(from: timestampDate)
+        let splitDateArray = dateString.split(separator: "T")
+        let splitTimeArray = splitDateArray[1].split(separator: ":")
+        let hour = Int(splitTimeArray[0])
+        if hour! > 6 && hour! < 18 {
+            return "Sun"
+        } else {
+            return "Night"
+        }
+        
+    }
 }

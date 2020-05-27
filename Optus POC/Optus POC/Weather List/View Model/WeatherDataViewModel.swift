@@ -61,11 +61,12 @@ class WeatherDataViewModel {
     ///
     /// - Parameter indexPathRow: index path which will be use to retrive data from view model
     static func getBackgroundImage(indexPathRow: Int) -> String {
-        let weatherImage = WeatherDataViewModel.self.weatherListArray[indexPathRow].weatherCondition.first?.weatherImage
-        if weatherImage!.contains("n"){
-             return "Night"
-        } else {
-            return "Sun"
-        }
+        let weatherImage = Constant.converDateFrom(timestamp: WeatherDataViewModel.self.weatherListArray[indexPathRow].dateTimeStamp, and: WeatherDataViewModel.self.weatherListArray[indexPathRow].sys.timezone) //WeatherDataViewModel.self.weatherListArray[indexPathRow].weatherCondition.first?.weatherImage
+//        if weatherImage!.contains("n"){
+//             return "Night"
+//        } else {
+//            return "Sun"
+//        }
+        return weatherImage
     }
 }

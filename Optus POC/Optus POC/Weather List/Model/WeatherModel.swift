@@ -22,9 +22,11 @@ struct WeatherModel: Decodable {
     var id: Int
     var visibility: Int32?
     var cityName: String?
+    var dateTimeStamp: Double
     var tempInformation: TempInformation
     var weatherCondition: [WeatherCondition]
     var windInformation: WindInformation
+    var sys: SysDetails
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -33,5 +35,7 @@ struct WeatherModel: Decodable {
         case tempInformation = "main"
         case weatherCondition = "weather"
         case windInformation = "wind"
+        case dateTimeStamp = "dt"
+        case sys = "sys"
     }
 }

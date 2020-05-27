@@ -17,5 +17,5 @@
 15.	Activity indicator is used as application perform any operation to indicate user
 16.	Application support all mobile device sizes and orientation
 17. Open Weather group api "https://api.openweathermap.org/data/2.5/group" is used to fetch weather details for all added cities and forcast api "https://api.openweathermap.org/data/2.5/forecast" is used to get hourly weather detail for particular city
-City ID provided for Melbourne in requirnment pointing to wrong city so I modified City ID from 4163971 to 2158177. So it will point to Aus Melbourne
-All background images used inside the applciation are downlaoded from pintrest website and icons from iconfiender. Weather icons are loaded from openweather API
+18. City ID provided for Melbourne in requirnment pointing to wrong city so I modified City ID from 4163971 to 2158177. So it will point to Aus Melbourne
+19. All background images used inside the applciation are downlaoded from pintrest website and icons from iconfiender. Weather icons are loaded from openweather API

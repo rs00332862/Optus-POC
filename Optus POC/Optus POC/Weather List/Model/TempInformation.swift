@@ -15,6 +15,7 @@ struct TempInformation: Decodable  {
     var maxTemp: Double
     var humidity: Double
     var feelsLikeTemp: Double
+    var pressure: Double
     
     enum CodingKeys: String, CodingKey {
         case temp = "temp"
@@ -22,6 +23,7 @@ struct TempInformation: Decodable  {
         case minTemp = "temp_min"
         case maxTemp = "temp_max"
         case humidity = "humidity"
+        case pressure = "pressure"
     }
 }
 
@@ -49,7 +51,12 @@ struct WeatherCondition: Decodable {
 
 struct SysDetails: Decodable  {
     var timezone: Int
+    var sunrise: Double
+    var sunset: Double
+    
     enum CodingKeys: String, CodingKey {
         case timezone = "timezone"
+        case sunrise = "sunrise"
+        case sunset = "sunset"
     }
 }

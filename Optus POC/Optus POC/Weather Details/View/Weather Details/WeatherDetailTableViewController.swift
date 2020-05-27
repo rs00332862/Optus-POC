@@ -53,13 +53,13 @@ class WeatherDetailTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if(indexPath.row == 0){
+        if(indexPath.row == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "customWeatherCell", for: indexPath) as! WeatherDetailTableViewCell
             if (selectedCellIndex != nil) {
                 cell.setWeatherDetailCellFor(indexPathRow: selectedCellIndex ?? 0)
             }
             return cell
-        }else{
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "WeeklyWeatherCellIdentifier", for: indexPath) as! WeeklyWeatherTableViewCell
             return cell
         }
@@ -67,7 +67,7 @@ class WeatherDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if(indexPath.row == 0){
-            return 268
+            return 340
         } else {
             return 194
         }

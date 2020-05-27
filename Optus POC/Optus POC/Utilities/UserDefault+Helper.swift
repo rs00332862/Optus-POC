@@ -18,7 +18,7 @@ class UserDefaultHelper {
             print("This is not a first time load")
         } else {
             UserDefaults.standard.set(true, forKey: "InitialLoad")
-            UserDefaults.standard.set("4163971,2147714,2174003", forKey: "CityData")
+            UserDefaults.standard.set("2158177,2147714,2174003", forKey: "CityData")
             UserDefaults.standard.set("C", forKey: "DefaultUnit")
         }
     }

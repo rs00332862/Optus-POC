@@ -264,10 +264,8 @@
 		F91146B12477D77700E26A23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F91146B62477E53A00E26A23 /* WeatherDetailTableViewCell.swift */,
-				F91146BA247851BE00E26A23 /* WeatherDetailTableViewController.swift */,
-				F9684EF424791B94003C0682 /* WeeklyWeatherTableViewCell.swift */,
-				F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */,
+				F990B6F3247E58410061A66A /* Weather Details */,
+				F990B6F2247E581F0061A66A /* Forcast View */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -312,6 +310,24 @@
 				F9684F04247A5695003C0682 /* CityViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		F990B6F2247E581F0061A66A /* Forcast View */ = {
+			isa = PBXGroup;
+			children = (
+				F9684EF424791B94003C0682 /* WeeklyWeatherTableViewCell.swift */,
+				F9684EFC24795802003C0682 /* DailyWeatherCollectionViewCell.swift */,
+			);
+			path = "Forcast View";
+			sourceTree = "<group>";
+		};
+		F990B6F3247E58410061A66A /* Weather Details */ = {
+			isa = PBXGroup;
+			children = (
+				F91146BA247851BE00E26A23 /* WeatherDetailTableViewController.swift */,
+				F91146B62477E53A00E26A23 /* WeatherDetailTableViewCell.swift */,
+			);
+			path = "Weather Details";
 			sourceTree = "<group>";
 		};
 		F9F61749247A631000810F99 /* View */ = {

@@ -19,7 +19,8 @@ class WeatherDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var minimumWeatherLabel: UILabel!
     @IBOutlet weak var windSpeedWeatherLabel: UILabel!
     @IBOutlet weak var windSpeedImageView: UIImageView!
-    
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
     
     /// method to set weather data on weather detail screen
     func setWeatherDetailCellFor(indexPathRow: Int) {
@@ -35,6 +36,8 @@ class WeatherDetailTableViewCell: UITableViewCell {
         self.maximumWeatherLabel.text = "↑" + Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.maxTemp)
         self.minimumWeatherLabel.text = "↓" +  Constant.convertTempFromKelvinToCelcius(kelvinTemprecture: weatherData.tempInformation.minTemp)
         self.windSpeedWeatherLabel.text = String(weatherData.windInformation.windspeed) + NSLocalizedString("WindSpeedText", comment: "")
+        self.humidityLabel.text = String(weatherData.tempInformation.humidity) + "%"
+        self.pressureLabel.text = String(weatherData.tempInformation.pressure) + " hPa"
         windSpeedImageView.rotate360Degrees()
     }
     
